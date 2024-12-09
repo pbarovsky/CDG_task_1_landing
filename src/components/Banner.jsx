@@ -1,6 +1,6 @@
-import AboutInfo from "../About/AboutInfo";
-import Button from "../Button";
-import PHOTO from "../../assets/images/photo.png";
+import AboutInfo from "./About/AboutInfo";
+import Button from "./Button";
+import PHOTO from "../assets/images/photo.png";
 
 import sc from "./Banner.module.css";
 

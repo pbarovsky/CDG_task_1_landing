@@ -1,5 +1,5 @@
 import sc from "./App.module.css";
-import Banner from "./components/Banner/Banner";
+import Banner from "./components/Banner";
 import Form from "./components/Form/Form";
 import Header from "./components/Header";
 import About from "./components/About/About";
