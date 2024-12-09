@@ -1,0 +1,160 @@
+.about {
+  max-width: 1280px;
+  width: 100%;
+  padding: 100px 85px;
+}
+
+.about__title {
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--black);
+  margin-bottom: 80px;
+}
+
+.about__grid_container {
+  display: grid;
+  row-gap: 80px;
+  column-gap: 158px;
+  max-width: 100%;
+}
+
+.about-info__container-size {
+  max-width: 410px;
+  width: 100%;
+  height: 114px;
+}
+
+@media (min-width: 501px) and (max-width: 983px) {
+  .about-info__container-size {
+    max-width: 380px;
+    max-height: 120px;
+  }
+}
+
+@media (max-width: 630px) {
+  .about {
+    padding: 50px 15px 100px 15px;
+  }
+
+  .about__title {
+    margin-bottom: 36px;
+  }
+  .about__grid_container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    row-gap: 80px;
+  }
+  .about__avatar {
+    grid-row: 1;
+  }
+  .about__info {
+    grid-row: 2;
+  }
+  .about__interests {
+    grid-row: 3;
+  }
+  .about__education {
+    grid-row: 4;
+  }
+  .about__button {
+    grid-row: 5;
+  }
+  .about-info__container-size {
+    max-width: 580px;
+    height: 120px;
+  }
+}
+
+@media (min-width: 984px) and (max-width: 1130px) {
+  .about__grid_container {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    row-gap: 84px;
+    column-gap: 44px;
+  }
+}
+
+@media (min-width: 631px) and (max-width: 770px) {
+  .about-info_font-size {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 631px) and (max-width: 983px) {
+  .about {
+    max-width: 792px;
+    width: 100%;
+    padding: 80px 39px 100px 39px;
+  }
+
+  .about__grid_container {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    row-gap: 64px;
+    column-gap: 44px;
+  }
+  .about__avatar {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  .about__info {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+  }
+  .about__button {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
+  .about__interests {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+  .about__education {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+
+@media (min-width: 984px) {
+  .about__grid_container {
+    grid-template-columns: 1fr 2fr;
+  }
+  .about__avatar {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  .about__info {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+  }
+  .about__button {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
+  .about__interests {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .about__education {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 500px) {
+  .about__grid_container {
+    row-gap: 48px;
+  }
+  .about-info__container-size {
+    height: 87px;
+  }
+  .about__title {
+    margin-bottom: 36px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+}

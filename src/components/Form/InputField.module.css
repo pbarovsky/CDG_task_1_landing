@@ -1,0 +1,114 @@
+.input-field__wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* max-width: 324px; */
+  max-height: 88px;
+  width: 100%;
+  height: 100%;
+}
+
+.input-field__label {
+  outline: none;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--black);
+}
+
+.input-field__star-red {
+  color: var(--red);
+}
+
+.input-field__input {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  border: 1px solid #ebecf0;
+  border-radius: 16px;
+  padding-left: 54px;
+  /* width: 324px;
+  height: 55px; */
+  background: var(--white);
+  color: var(--grey-dark);
+  font-size: 16px;
+  transition: border-color 0.3s;
+
+  width: 100%; /* Занимает всю доступную ширину контейнера */
+  /* max-width: 324px; /* Максимальная ширина */
+  min-width: 200px; /* Минимальная ширина */
+  height: 55px;
+}
+
+.input-field__icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  fill: var(--grey-dark);
+  stroke-width: 1px;
+  stroke: var(--grey-dark);
+  width: 24px;
+  height: 24px;
+}
+
+.input-field__icon--error {
+  fill: var(--red); /* Устанавливает цвет заливки */
+  stroke: var(--red); /* Устанавливает цвет контура */
+}
+
+.input-field__icon--focused {
+  fill: var(--lavender);
+}
+
+.input-field__input--valid {
+  border: 1px solid #ebecf0;
+}
+
+.input-field__input--error {
+  border-color: var(--red);
+}
+
+.input-field__input:hover {
+  border: 1px solid var(--lavender);
+}
+
+.input-field__input:focus {
+  border: 1px solid var(--lavender);
+  outline: none;
+}
+
+.input-field__input:disabled {
+  background: var(--grey-light);
+  border: 1px solid var(--grey-light);
+  cursor: not-allowed;
+}
+
+.input-field__error-message {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--red);
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 631px) and (max-width: 983px) {
+  .input-field__input {
+    max-width: 312px;
+  }
+}
+
+@media (max-width: 630px) {
+  .input-field__input {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .input-field__label {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .input-field__error-message {
+    font-weight: 600;
+    font-size: 12px;
+  }
+}

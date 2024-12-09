@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  max-width: 1280px; /* Максимальная ширина для десктопа */
+  width: 100%; /* Гибкая ширина */
+  height: 64px;
+  padding: 0 20px; /* Базовые отступы для всех экранов */
+  background: var(--white);
+  /* border-bottom: 1px solid var(--grey-light); */
+  margin: 0 auto; /* Центрирование и нижний отступ */
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+}
+
+.header__actions-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header__actions-item {
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: var(--grey-dark);
+  cursor: pointer;
+}
+
+.active {
+  color: var(--lavender);
+}
+
+.header__menu-icon {
+  display: none;
+}
+
+/* Mobile (до 430px) */
+@media (max-width: 500px) {
+  .header {
+    max-width: 100%; /* Используем всю ширину экрана */
+    padding: 0 10px; /* Уменьшаем отступы */
+  }
+
+  .header__actions-list {
+    display: none; /* Прячем список на мобильных устройствах */
+  }
+
+  .header__menu-icon {
+    display: flex; /* Показываем иконку меню */
+  }
+}
+
+/* Tablet (от 431px до 792px) */
+@media (min-width: 501px) and (max-width: 983px) {
+  .header {
+    max-width: 100%; /* Используем всю ширину экрана */
+    padding: 0 39px; /* Отступы для планшетов */
+  }
+}
+
+/* Desktop (от 793px и выше) */
+@media (min-width: 984px) {
+  .header {
+    max-width: 1280px; /* Центрируем и ограничиваем максимальную ширину */
+    padding: 0 85px; /* Широкие отступы для десктопа */
+  }
+}
