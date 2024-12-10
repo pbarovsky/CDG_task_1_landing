@@ -22,7 +22,7 @@
 .form__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 37px;
 }
 
 .form__inputs {

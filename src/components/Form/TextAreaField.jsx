@@ -1,25 +1,27 @@
 import React from "react";
-import "./TextAreaField.css";
+import sc from "./TextAreaField.module.css";
 
 const TextAreaField = ({
   id,
+  name,
   label,
   placeholder,
   value,
-  setValue,
+  onChange,
   disabled = false,
 }) => {
   return (
-    <div className="textarea-field__wrapper">
-      <label htmlFor={id} className="textarea-field__label">
+    <div className={sc['textarea-field__wrapper']}>
+      <label htmlFor={id} className={sc['textarea-field__label']}>
         {label}
       </label>
       <textarea
         id={id}
-        className="textarea-field__textarea"
+        name={name}
+        className={sc['textarea-field__textarea']}
         placeholder={placeholder}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={onChange}
         disabled={disabled}
       />
     </div>

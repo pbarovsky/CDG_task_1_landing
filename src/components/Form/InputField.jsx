@@ -3,25 +3,30 @@ import sc from "./InputField.module.css";
 
 const InputField = ({
   id,
+  name,
   label,
   type = "text",
   placeholder,
   value,
-  setValue,
-  validator,
+  onChange,
+  onBlur,
+  error,
   icon: Icon,
   errorIcon: ErrorIcon,
   disabled = false,
 }) => {
-  const [error, setError] = useState(false);
-  const [touched, setTouched] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
+  const [isValid, setIsValid] = useState(false);
 
-  const validate = () => {
-    setError(!validator(value));
+  const handleFocus = () => {
+    setIsFocused(true);
   };
 
-  const isValid = validator(value);
+  const handleBlur = (e) => {
+    setIsFocused(false);
+    onBlur(e);
+    setIsValid(!error && e.target.value !== "");
+  };
 
   return (
     <div className={sc["input-field__wrapper"]}>
@@ -32,36 +37,31 @@ const InputField = ({
         <input
           type={type}
           id={id}
+          name={name}
           className={`${sc["input-field__input"]} ${
-            error && touched ? sc["input-field__input--error"] : ""
-          } ${isFocused && isValid ? sc["input-field__input--focused"] : ""}`}
+            error ? sc["input-field__input--error"] : ""
+          } ${isFocused && !error ? sc["input-field__input--focused"] : ""}`}
           placeholder={placeholder}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => {
-            setTouched(true);
-            validate();
-            setIsFocused(false);
-          }}
+          onChange={onChange}
+          onBlur={handleBlur}
+          onFocus={handleFocus}
           disabled={disabled}
           autoComplete="off"
         />
-        {error && touched ? (
+        {error ? (
           <ErrorIcon
             className={`${sc["input-field__icon"]} ${sc["input-field__icon--error"]}`}
           />
         ) : (
           <Icon
             className={`${sc["input-field__icon"]} ${
-              isFocused || (isValid && !error)
-                ? sc["input-field__icon--focused"]
-                : ""
+              isFocused || isValid ? sc["input-field__icon--focused"] : ""
             }`}
           />
         )}
       </div>
-      {error && touched && (
+      {error && (
         <p className={sc["input-field__error-message"]}>
           Please fill this mandatory field
         </p>

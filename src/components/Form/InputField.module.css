@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  /* max-width: 324px; */
   max-height: 88px;
   width: 100%;
   height: 100%;
 }
+
 
 .input-field__label {
   outline: none;
@@ -20,22 +20,21 @@
 }
 
 .input-field__input {
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  align-items: center;
   flex-direction: row;
   border: 1px solid #ebecf0;
   border-radius: 16px;
   padding-left: 54px;
-  /* width: 324px;
-  height: 55px; */
   background: var(--white);
   color: var(--grey-dark);
   font-size: 16px;
   transition: border-color 0.3s;
 
   width: 100%; /* Занимает всю доступную ширину контейнера */
-  /* max-width: 324px; /* Максимальная ширина */
   min-width: 200px; /* Минимальная ширина */
   height: 55px;
 }
@@ -82,7 +81,9 @@
   background: var(--grey-light);
   border: 1px solid var(--grey-light);
   cursor: not-allowed;
+  pointer-events: none;
 }
+
 
 .input-field__error-message {
   font-weight: 600;
@@ -90,6 +91,8 @@
   color: var(--red);
   margin: 0;
   padding: 0;
+  position: absolute;
+  bottom: -20px
 }
 
 @media (min-width: 631px) and (max-width: 983px) {
