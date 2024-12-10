@@ -3,10 +3,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .separator {
-  width: 100vw;
+  width: 100%;
   background-color: var(--grey-light);
   height: 1px;
 }
