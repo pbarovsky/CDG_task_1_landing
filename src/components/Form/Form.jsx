@@ -20,10 +20,7 @@ const Form = () => {
     email: (value) => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
   };
 
-  const { formData, errors, handleChange, handleBlur, resetForm } = useForm(
-    initialValues,
-    validate
-  );
+  const { formData, errors, handleChange, handleBlur, resetForm } = useForm(initialValues, validate)
 
   const handleSubmit = (e) => {
     e.preventDefault();
