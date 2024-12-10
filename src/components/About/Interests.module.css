@@ -66,17 +66,6 @@
   color: var(--black);
 }
 
-/* @media (min-width: 984px) and (max-width: 1020px) {
-  .interests__text__title {
-    font-size: 16px;
-  }
-
-  .interests__text__desc {
-    font-size: 16px;
-  }
-} */
-
-/* Mobile */
 @media (max-width: 500px) {
   .interests {
     max-width: 246px;

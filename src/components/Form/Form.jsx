@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import useForm from "../../hooks/useForm";
-import React from "react";
 import InputField from "./InputField";
 import TextAreaField from "./TextAreaField";
 import MailIcon from "../Icons/MailIcon";
@@ -20,14 +20,20 @@ const Form = () => {
     email: (value) => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
   };
 
-  const { formData, errors, handleChange, handleBlur, resetForm } = useForm(initialValues, validate)
+  const { formData, errors, handleChange, handleBlur, resetForm } = useForm(
+    initialValues,
+    validate
+  );
+
+  const [reset, setReset] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!errors.name && !errors.email) {
       // Успешная валидация
-      console.log("Form submitted successfully!");
       resetForm();
+      setReset(true); // Устанавливаем флаг сброса
+      setTimeout(() => setReset(false), 0); // Сбрасываем флаг, чтобы он снова мог сработать
     }
   };
 
@@ -48,6 +54,7 @@ const Form = () => {
             error={errors.name}
             icon={PersonIcon}
             errorIcon={WarningIcon}
+            reset={reset}
           />
           <InputField
             id="inputEmail"
@@ -61,6 +68,7 @@ const Form = () => {
             error={errors.email}
             icon={MailIcon}
             errorIcon={WarningIcon}
+            reset={reset}
           />
         </div>
         <TextAreaField

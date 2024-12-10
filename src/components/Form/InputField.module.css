@@ -7,7 +7,6 @@
   height: 100%;
 }
 
-
 .input-field__label {
   outline: none;
   font-weight: 600;
@@ -34,8 +33,8 @@
   font-size: 16px;
   transition: border-color 0.3s;
 
-  width: 100%; /* Занимает всю доступную ширину контейнера */
-  min-width: 200px; /* Минимальная ширина */
+  width: 100%;
+  min-width: 200px;
   height: 55px;
 }
 
@@ -52,8 +51,8 @@
 }
 
 .input-field__icon--error {
-  fill: var(--red); /* Устанавливает цвет заливки */
-  stroke: var(--red); /* Устанавливает цвет контура */
+  fill: var(--red);
+  stroke: var(--red);
 }
 
 .input-field__icon--focused {
@@ -84,7 +83,6 @@
   pointer-events: none;
 }
 
-
 .input-field__error-message {
   font-weight: 600;
   font-size: 14px;
@@ -92,7 +90,7 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  bottom: -20px
+  bottom: -20px;
 }
 
 @media (min-width: 631px) and (max-width: 983px) {

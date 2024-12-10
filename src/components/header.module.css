@@ -3,13 +3,12 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  max-width: 1280px; /* Максимальная ширина для десктопа */
-  width: 100%; /* Гибкая ширина */
+  max-width: 1280px;
+  width: 100%;
   height: 64px;
-  padding: 0 20px; /* Базовые отступы для всех экранов */
+  padding: 0 20px;
   background: var(--white);
-  /* border-bottom: 1px solid var(--grey-light); */
-  margin: 0 auto; /* Центрирование и нижний отступ */
+  margin: 0 auto;
 }
 
 .header__actions {
@@ -40,34 +39,31 @@
   display: none;
 }
 
-/* Mobile (до 430px) */
 @media (max-width: 500px) {
   .header {
-    max-width: 100%; /* Используем всю ширину экрана */
-    padding: 0 10px; /* Уменьшаем отступы */
+    max-width: 100%;
+    padding: 0 10px;
   }
 
   .header__actions-list {
-    display: none; /* Прячем список на мобильных устройствах */
+    display: none;
   }
 
   .header__menu-icon {
-    display: flex; /* Показываем иконку меню */
+    display: flex;
   }
 }
 
-/* Tablet (от 431px до 792px) */
 @media (min-width: 501px) and (max-width: 983px) {
   .header {
-    max-width: 100%; /* Используем всю ширину экрана */
-    padding: 0 39px; /* Отступы для планшетов */
+    max-width: 100%;
+    padding: 0 39px;
   }
 }
 
-/* Desktop (от 793px и выше) */
 @media (min-width: 984px) {
   .header {
-    max-width: 1280px; /* Центрируем и ограничиваем максимальную ширину */
-    padding: 0 85px; /* Широкие отступы для десктопа */
+    max-width: 1280px;
+    padding: 0 85px;
   }
 }

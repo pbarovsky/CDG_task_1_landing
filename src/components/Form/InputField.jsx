@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import sc from "./InputField.module.css";
 
 const InputField = ({
@@ -14,6 +14,7 @@ const InputField = ({
   icon: Icon,
   errorIcon: ErrorIcon,
   disabled = false,
+  reset,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [isValid, setIsValid] = useState(false);
@@ -27,6 +28,19 @@ const InputField = ({
     onBlur(e);
     setIsValid(!error && e.target.value !== "");
   };
+
+  // Сброс состояния при изменении пропа reset
+  useEffect(() => {
+    if (reset) {
+      setIsFocused(false);
+      setIsValid(false);
+    }
+  }, [reset]);
+
+  // Синхронизация состояния isValid с value и error
+  useEffect(() => {
+    setIsValid(!error && value !== "");
+  }, [error, value]);
 
   return (
     <div className={sc["input-field__wrapper"]}>
