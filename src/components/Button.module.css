@@ -54,7 +54,6 @@
   stroke: var(--grey-light);
 }
 
-/* Mobile */
 @media (max-width: 500px) {
   .btn {
     gap: 8px;

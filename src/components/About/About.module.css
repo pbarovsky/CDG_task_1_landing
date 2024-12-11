@@ -33,7 +33,7 @@
 
 @media (max-width: 630px) {
   .about {
-    padding: 50px 15px 100px 15px;
+    padding: 50px 39px 100px 39px;
   }
 
   .about__title {
@@ -146,6 +146,10 @@
 }
 
 @media (max-width: 500px) {
+  .about {
+    padding: 50px 15px 100px 15px;
+  }
+
   .about__grid_container {
     row-gap: 48px;
   }

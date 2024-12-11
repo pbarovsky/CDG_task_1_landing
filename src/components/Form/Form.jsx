@@ -26,15 +26,29 @@ const Form = () => {
   );
 
   const [reset, setReset] = useState(false);
+  const [isValidationTriggered, setIsValidationTriggered] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!errors.name && !errors.email) {
-      // Успешная валидация
-      resetForm();
-      setReset(true); // Устанавливаем флаг сброса
-      setTimeout(() => setReset(false), 0); // Сбрасываем флаг, чтобы он снова мог сработать
+
+    // Устанавливаем флаг для активации ошибок
+    setIsValidationTriggered(true);
+
+    // Обрабатываем валидацию для всех полей
+    handleBlur({ target: { name: "name", value: formData.name } });
+    handleBlur({ target: { name: "email", value: formData.email } });
+
+    // Проверяем, есть ли ошибки
+    if (errors.name || errors.email || !formData.name || !formData.email) {
+      return;
     }
+
+    // Успешная отправка
+    resetForm();
+    setIsValidationTriggered(false); // Сбрасываем валидацию
+    setReset(true);
+    setTimeout(() => setReset(false), 0); // Сбрасываем состояние reset
+    console.log("Form submitted successfully!");
   };
 
   return (
@@ -50,8 +64,11 @@ const Form = () => {
             placeholder="Name Surname"
             value={formData.name}
             onChange={handleChange}
-            onBlur={handleBlur}
-            error={errors.name}
+            onBlur={(e) => {
+              handleBlur(e); // Срабатывает при потере фокуса
+              setIsValidationTriggered(true); // Фиксируем активацию ошибок
+            }}
+            error={isValidationTriggered && errors.name}
             icon={PersonIcon}
             errorIcon={WarningIcon}
             reset={reset}
@@ -64,8 +81,11 @@ const Form = () => {
             placeholder="name@example.com"
             value={formData.email}
             onChange={handleChange}
-            onBlur={handleBlur}
-            error={errors.email}
+            onBlur={(e) => {
+              handleBlur(e); // Срабатывает при потере фокуса
+              setIsValidationTriggered(true); // Фиксируем активацию ошибок
+            }}
+            error={isValidationTriggered && errors.email}
             icon={MailIcon}
             errorIcon={WarningIcon}
             reset={reset}
@@ -79,13 +99,16 @@ const Form = () => {
           value={formData.projectDescription}
           onChange={handleChange}
         />
+        <Button
+          btn_text="Submit"
+          type="submit"
+          form="send"
+          disabled={
+            isValidationTriggered &&
+            (errors.name || errors.email || !formData.name || !formData.email)
+          }
+        />
       </form>
-      <Button
-        btn_text="Submit"
-        type="submit"
-        form="send"
-        disabled={errors.name || errors.email}
-      />
     </div>
   );
 };

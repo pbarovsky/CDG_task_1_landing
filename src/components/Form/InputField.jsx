@@ -25,11 +25,10 @@ const InputField = ({
 
   const handleBlur = (e) => {
     setIsFocused(false);
-    onBlur(e);
-    setIsValid(!error && e.target.value !== "");
+    onBlur(e); // Передача события вверх для обработки ошибок
   };
 
-  // Сброс состояния при изменении пропа reset
+  // Сброс состояния при изменении `reset`
   useEffect(() => {
     if (reset) {
       setIsFocused(false);
@@ -37,9 +36,9 @@ const InputField = ({
     }
   }, [reset]);
 
-  // Синхронизация состояния isValid с value и error
+  // Синхронизация `isValid` с состоянием поля
   useEffect(() => {
-    setIsValid(!error && value !== "");
+    setIsValid(!error && value.trim() !== "");
   }, [error, value]);
 
   return (
