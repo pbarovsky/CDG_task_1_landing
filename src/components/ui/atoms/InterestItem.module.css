@@ -1,0 +1,72 @@
+.interests_item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  max-width: 353px;
+  width: 100%;
+}
+
+.interests_icon_container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 2px solid var(--lavender);
+}
+
+.interests_icon {
+  fill: var(--lavender);
+  height: 24px;
+  width: 24px;
+}
+
+.interests_text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.interests_text_title {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--black);
+}
+
+.interests_text_desc {
+  color: var(--black);
+}
+
+@media (max-width: 500px) {
+  .interests_item {
+    gap: 8px;
+    max-width: 246px;
+    width: 100%;
+  }
+
+  .interests_icon {
+    height: 17.6px;
+    width: 17.6px;
+  }
+
+  .interests_text {
+    gap: 4px;
+  }
+
+  .interests_text_title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--black);
+  }
+   
+
+  .interests_icon_container {
+    width: 44px;
+    height: 44px;
+  }
+}

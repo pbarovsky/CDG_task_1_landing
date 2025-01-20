@@ -1,0 +1,21 @@
+.info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.line {
+  background-color: var(--lavender);
+  width: 25px;
+  height: 3px;
+}
+
+.info_desc {
+  color: var(--grey-dark);
+}
+
+.info_bold_text {
+  color: var(--black);
+}

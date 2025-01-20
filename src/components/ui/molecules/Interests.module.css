@@ -1,0 +1,41 @@
+.interests {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 44px;
+  max-width: 353px;
+  width: 100%;
+}
+
+.interests_title {
+  color: var(--black);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.interests_item_container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 44px;
+}
+
+
+@media (max-width: 500px) {
+  .interests {
+    gap: 28px;
+    max-width: 246px;
+    width: 100%;
+  }
+
+  .interests_title {
+    font-weight: 600;
+    font-size: 20px;
+  } 
+
+  .interests_item_container {
+    gap: 24px;
+  }
+}

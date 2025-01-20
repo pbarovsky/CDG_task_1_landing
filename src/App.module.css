@@ -22,4 +22,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
+}
+
+@media (min-width: 625px) and (max-width: 792px) {
+  .form__background {
+    height: 692px;
+    margin-top: 90px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 624px) {
+  .form__background {
+    height: 849px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form__background {
+    height: 753px;
+  }
 }

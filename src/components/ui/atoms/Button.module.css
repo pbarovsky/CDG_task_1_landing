@@ -1,0 +1,74 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 12px;
+  border: none;
+
+  border-radius: 50px;
+  padding: 13px 25px;
+  height: 50px;
+  max-width: 188px;
+  cursor: pointer;
+  background: var(--lavender);
+
+  color: var(--white);
+
+  transition: background 0.3s ease, color 0.3s ease, outline 0.3s ease-in;
+}
+
+.icon {
+  fill: var(--white);
+  stroke: var(--lavender);
+  stroke-width: 1.5;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+  width: 24px;
+  height: 24px;
+}
+
+.btn_submit {
+  max-width: 147px;
+  width: 100%;
+}
+
+.btn:hover {
+  background: #6c2bd9;
+}
+
+.btn:hover .icon {
+  fill: var(--white);
+  stroke: #7e3af2;
+}
+
+.btn:active {
+  outline: 3px solid #cabffd;
+}
+
+.btn:disabled {
+  background: var(--grey-light);
+  color: var(--grey-dark);
+  outline: none;
+  cursor: not-allowed;
+}
+
+.btn:disabled .icon {
+  fill: var(--grey-dark);
+  stroke: var(--grey-light);
+}
+
+@media (max-width: 500px) {
+  .btn {
+    gap: 8px;
+    border-radius: 50px;
+    padding: 9px 13px;
+    height: 39px;
+     max-width: 139px;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+}
