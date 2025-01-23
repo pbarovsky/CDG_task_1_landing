@@ -1,0 +1,23 @@
+.input_group {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 792px) {
+  .input_group {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 624px) {
+  .input_group {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .input_group {
+    gap: 6px;
+  }
+}
