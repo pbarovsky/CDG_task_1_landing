@@ -55,7 +55,6 @@
 
 .button_mobile {
   display: none;
-  z-index: 9999;
 }
 
 @media (max-width: 792px) {
