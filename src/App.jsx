@@ -1,9 +1,9 @@
 import sc from "./App.module.css";
-import { Banner } from "./components/ui/organisms/Banner";
-import { Form } from "./components/ui/organisms/Form";
-import { Header } from "./components/ui/organisms/Header";
-import { About } from "./components/ui/organisms/About";
-import { Footer } from "./components/ui/organisms/Footer";
+import { Banner } from "./ui/organisms/Banner";
+import { Form } from "./ui/organisms/Form";
+import { Header } from "./ui/organisms/Header";
+import { About } from "./ui/organisms/About";
+import { Footer } from "./ui/organisms/Footer";
 
 const App = () => (
   <div className={sc.content__wrapper}>

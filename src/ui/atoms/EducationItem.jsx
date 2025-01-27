@@ -1,21 +1,3 @@
-// import sc from "./EducationItem.module.css"
-
-// export const EducationItem = ({ years, title, description }) => (
-//   <div className={sc.education_item}>
-//     <p className={`${sc.education_year} body_text`}>{years}</p>
-//     <div className={sc.education_text}>
-//       <p className={sc.education_title}>{title}</p>
-//       <p className={`${sc.education_desc} body_text`}>{description}</p>
-//     </div>
-//   </div>
-// );
-
-
-
-
-
-
-
 import { useState, useLayoutEffect, useCallback } from "react";
 import sc from "./EducationItem.module.css";
 
@@ -28,10 +10,8 @@ export const EducationItem = ({ years, title, description }) => {
 
   useLayoutEffect(() => {
     window.addEventListener("resize", handleResize);
-    console.log("Добавлен resize слушатель");
     return () => {
       window.removeEventListener("resize", handleResize);
-      console.log("Удален resize слушатель");
     };
   }, [handleResize]);
 

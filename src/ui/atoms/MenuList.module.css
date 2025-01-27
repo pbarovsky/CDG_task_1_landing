@@ -4,13 +4,15 @@
   gap: 24px;
   align-items: center;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 20;
 }
 
 .menu_list.open {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  width: 130px;
+  position: fixed;
+  width: 100%;
+  max-width: 130px;
   top: 64px;
   right: 0;
   background: var(--white);
@@ -18,7 +20,7 @@
   gap: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  z-index: 10;
+  z-index: 30;
 }
 
 .menu_item {
@@ -35,4 +37,8 @@
   .menu_list {
     display: none;
   }
+  .menu_list.open {
+    display: flex;
+  }
 }
+

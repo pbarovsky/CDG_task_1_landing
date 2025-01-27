@@ -1,4 +1,4 @@
-import sc from "./InterestItem.module.css"
+import sc from "./InterestItem.module.css";
 
 export const InterestItem = ({ icon: Icon, title, description }) => (
   <div className={sc.interests_item}>

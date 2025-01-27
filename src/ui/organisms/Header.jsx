@@ -28,8 +28,10 @@ export const Header = () => {
         <nav className={sc.header__actions}>
           <div
             className={sc.menu_icon}
-            onClick={toggleMenu}
-            onBlur={closeMenu}
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleMenu();
+            }}
             tabIndex={0}
           >
             {isMenuOpen ? (
@@ -48,5 +50,3 @@ export const Header = () => {
     </div>
   );
 };
-
-export default Header;
