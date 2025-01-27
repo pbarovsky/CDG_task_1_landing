@@ -16,10 +16,10 @@
   color: var(--black);
 }
 
-.form__container { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 46px; 
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
 }
 
 .field_container {
@@ -62,10 +62,10 @@
     width: 260px;
   }
 
-  .form__container { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 37px; 
+  .form__container {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
   }
 
   .field_container {

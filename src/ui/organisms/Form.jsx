@@ -3,6 +3,7 @@ import { InputGroup } from "../molecules/InputGroup";
 import { TextAreaField } from "../atoms/TextAreaField";
 import { Button } from "../atoms/Button";
 import { Container } from "../atoms/Container";
+import { useIsMobile } from "../../hooks/useIsMobile";
 import sc from "./Form.module.css";
 
 const validate = {
@@ -21,6 +22,7 @@ export const Form = () => {
     email: false,
   });
   const [isSubmitAttempted, setIsSubmitAttempted] = useState(false);
+  const isMobile = useIsMobile(500);
 
   const handleBlur = (value, type, setError) => {
     const isError = validate[type](value);
@@ -63,10 +65,14 @@ export const Form = () => {
   const isSubmitDisabled =
     isSubmitAttempted && (!isValid.name || !isValid.email);
 
+  const buttonText = isMobile ? "Get in touch" : "Submit";
+
   return (
     <Container className="form_container">
       <div className={sc.form}>
-        <h2 className={`${sc.form_title} title_h2`}>Let’s discuss your project</h2>
+        <h2 className={`${sc.form_title} title_h2`}>
+          Let’s discuss your project
+        </h2>
         <form id="send" className={sc.form__container} onSubmit={handleSubmit}>
           <div className={sc.field_container}>
             <InputGroup
@@ -96,7 +102,7 @@ export const Form = () => {
             />
           </div>
           <Button
-            btn_text="Submit"
+            btn_text={buttonText}
             type="submit"
             form="send"
             disabled={isSubmitDisabled}

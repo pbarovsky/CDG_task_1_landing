@@ -1,4 +1,3 @@
-import React from "react";
 import { Info } from "../atoms/Info";
 import { Avatar } from "../atoms/Avatar";
 import { Education } from "../molecules/Education";

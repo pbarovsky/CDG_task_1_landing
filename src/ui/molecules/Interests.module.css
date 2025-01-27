@@ -22,7 +22,6 @@
   gap: 44px;
 }
 
-
 @media (max-width: 500px) {
   .interests {
     gap: 28px;
@@ -33,7 +32,7 @@
   .interests_title {
     font-weight: 600;
     font-size: 20px;
-  } 
+  }
 
   .interests_item_container {
     gap: 24px;

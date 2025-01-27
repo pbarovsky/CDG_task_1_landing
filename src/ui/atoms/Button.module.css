@@ -63,12 +63,11 @@
     border-radius: 50px;
     padding: 9px 13px;
     height: 39px;
-     max-width: 139px;
+    max-width: 139px;
   }
 
   .icon {
     width: 16px;
     height: 16px;
   }
-  
 }

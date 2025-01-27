@@ -1,19 +1,8 @@
-import { useState, useLayoutEffect, useCallback } from "react";
+import { useIsMobile } from "../../hooks/useIsMobile";
 import sc from "./EducationItem.module.css";
 
 export const EducationItem = ({ years, title, description }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
-
-  const handleResize = useCallback(() => {
-    setIsMobile(window.innerWidth <= 500);
-  }, []);
-
-  useLayoutEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [handleResize]);
+  const isMobile = useIsMobile(500);
 
   const mobileTitle =
     title === "Frontend development courses" && isMobile
