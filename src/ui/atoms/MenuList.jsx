@@ -1,9 +1,9 @@
 import { Link } from "react-scroll";
 import sc from "./MenuList.module.css";
 
-export const MenuList = ({ isMenuOpen, menuItems, onCloseMenu }) => {
+export const MenuList = ({ isMenuOpen, menuItems, onCloseMenu, isMobile }) => {
   return (
-    <ul className={`${sc.menu_list} ${isMenuOpen ? sc.open : ""}`}>
+    <ul className={`${sc.menu_list} ${isMobile && isMenuOpen ? sc.open : ""}`}>
       {menuItems.map((item) => (
         <li key={item.id} className={`${sc.menu_item} subtitle_2`}>
           <Link

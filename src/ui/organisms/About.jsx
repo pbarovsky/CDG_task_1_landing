@@ -7,8 +7,6 @@ import { Container } from "../atoms/Container";
 import { Link } from "react-scroll";
 import sc from "./About.module.css";
 
-const boldText = "Nick Richardson";
-
 const AboutParagraphText = (
   <>
     - specialist in Frontend development. Clear code is my passion.
@@ -17,25 +15,21 @@ const AboutParagraphText = (
   </>
 );
 
-const GetInTouchButton = ({ className = "" }) => {
-  return (
-    <>
-      <Button
-        btn_text={
-          <Link
-            style={{ color: "var(--white)" }}
-            to="form"
-            smooth={true}
-            duration={200}
-          >
-            Get in touch
-          </Link>
-        }
-        className={className}
-      />
-    </>
-  );
-};
+const GetInTouchButton = ({ className = "" }) => (
+  <Button
+    btn_text={
+      <Link
+        style={{ color: "var(--white)" }}
+        to="form"
+        smooth={true}
+        duration={200}
+      >
+        Get in touch
+      </Link>
+    }
+    className={className}
+  />
+);
 
 export const About = ({ id }) => {
   return (
@@ -47,7 +41,7 @@ export const About = ({ id }) => {
             <Avatar />
             <div className={sc.get_in_touch}>
               <Info
-                boldText={boldText}
+                boldText="Nick Richardson"
                 paragraphText={AboutParagraphText}
                 className={sc.about_info}
               />

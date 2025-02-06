@@ -11,6 +11,8 @@ const validate = {
   email: (value) => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
 };
 
+const errortext = "Please fill this mandatory field";
+
 export const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,7 +28,7 @@ export const Form = () => {
 
   const handleBlur = (value, type, setError) => {
     const isError = validate[type](value);
-    setError(isError ? "Please fill this mandatory field" : "");
+    setError(isError ? errortext : "");
 
     setIsValid((prev) => ({
       ...prev,
@@ -47,8 +49,8 @@ export const Form = () => {
       name.trim() === "" ||
       email.trim() === ""
     ) {
-      setNameError(isNameError ? "Please fill this mandatory field" : "");
-      setEmailError(isEmailError ? "Please fill this mandatory field" : "");
+      setNameError(isNameError ? errortext : "");
+      setEmailError(isEmailError ? errortext : "");
       return;
     }
 
@@ -59,7 +61,6 @@ export const Form = () => {
     setEmailError("");
     setIsValid({ name: false, email: false });
     setIsSubmitAttempted(false);
-    console.log("send");
   };
 
   const isSubmitDisabled =
