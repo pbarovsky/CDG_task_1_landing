@@ -28,8 +28,8 @@ Make sure you have **Node.js** and **npm** installed on your machine.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/pbarovsky/CDG_task_1_landing.git
-   cd CDG_task_1_landing
+   git clone https://github.com/pbarovsky/landing_page_React.git
+   cd landing_page_React
    ```
 
 2. Install the dependencies:
@@ -46,7 +46,7 @@ Make sure you have **Node.js** and **npm** installed on your machine.
 
 4. Open your browser and visit:
    ```
-   http://localhost:5173/CDG_task_1_landing/
+   http://localhost:5173/landing_page_React/
    ```
 
 ## Technologies Used
